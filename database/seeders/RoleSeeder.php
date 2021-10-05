@@ -22,7 +22,7 @@ class RoleSeeder extends Seeder
         ]);
 
         Role::create([
-            'name' => 'MD',
+            'name' => 'COO',
             'description' => null,
             'access_level' => 5,
         ]);

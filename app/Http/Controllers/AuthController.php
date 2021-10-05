@@ -8,13 +8,14 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
 use App\Models\User;
+use App\Models\Role;
 
 class AuthController extends Controller
 {
     public function register(Request $request){
         $validator = Validator::make($request->all(), [
             'name' => 'required|string',
-            'role_id' => 'required|integer',
+            'role' => 'required|integer',
             'email' => 'required|string|unique:users,email',
             'password' => 'required|string|confirmed',
         ]);
@@ -25,9 +26,10 @@ class AuthController extends Controller
             return response($response, 401);
         }else{
             $validated = $validator->validated();
+
             $user = User::create([
                 'name' => $validated['name'],
-                'role_id' => $validated['role_id'],
+                'role_id' => $validated['role'],
                 'email' => $validated['email'],
                 'password' => bcrypt($validated['password']),
             ]);
@@ -121,5 +123,50 @@ class AuthController extends Controller
         ];
 
         return response($response, 201);
+    }
+
+    public function destroy(Request $request){
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|string',
+            'password' => 'required|string',
+            'user_access_to_be_revocked' => 'required|string'
+        ]);
+
+        if ($validator->fails()) {
+            $response['response'] = $validator->messages();
+
+            return response($response, 401);
+        }else{
+            $validated = $validator->validated();
+            $user = User::where('email', $validated['email'])->first();
+
+            if(!$user || !Hash::check($validated['password'], $user->password)){
+                $response = [
+                    'message' => 'Bad Credentials',
+                    'response' => $validator->messages(),
+                ];
+
+                return response($response, 401);
+            }
+    
+            $user_access_to_be_revocked = User::where('email', $validated['user_access_to_be_revocked'])->first();
+            
+            if($user_access_to_be_revocked){
+                $user_access_to_be_revocked->delete();
+
+                $response = [
+                    'message' => 'Access for User '.$user_access_to_be_revocked->name.' has been Revocked!',
+                ];
+            }
+            else{
+                $response = [
+                    'message' => 'User Not Found!',
+                ];
+            }            
+
+            
+
+            return response($response, 201);
+        }
     }
 }

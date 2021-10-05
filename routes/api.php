@@ -27,10 +27,11 @@ Route::apiResources([
     'roles' => RoleController::class,
 ]);
 
-Route::prefix('/user')->group(function () {
+Route::prefix('/users')->group(function () {
     Route::middleware(['auth:sanctum'])->group(function () {
         Route::post('/logout', [AuthController::class, 'logout']);
         Route::put('/update', [AuthController::class, 'update']);
+        Route::post('/destroy', [AuthController::class, 'destroy']);
     });
     
     Route::post('/register', [AuthController::class, 'register']);
