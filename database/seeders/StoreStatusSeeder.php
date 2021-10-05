@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-class StoreHouseStatusSeeder extends Seeder
+class StoreStatusSeeder extends Seeder
 {
     /**
      * Run the database seeds.

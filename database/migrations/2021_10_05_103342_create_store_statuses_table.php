@@ -4,9 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-use App\Models\PurchaseOrder;
-
-class CreateStoreHouseStatusTable extends Migration
+class CreateStoreStatusesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,7 +13,7 @@ class CreateStoreHouseStatusTable extends Migration
      */
     public function up()
     {
-        Schema::create('store_houses', function (Blueprint $table) {
+        Schema::create('store_statuses', function (Blueprint $table) {
             $table->id();
             $table->foreignId('purchase_order_id')->constrained();
             $table->boolean('shipment_recieved')->default(false);
@@ -33,6 +31,6 @@ class CreateStoreHouseStatusTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('store_houses');
+        Schema::dropIfExists('store_statuses');
     }
 }

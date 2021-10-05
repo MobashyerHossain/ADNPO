@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\StoreHouseStatus;
+use App\Models\StoreStatus;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class StoreHouseStatusFactory extends Factory
+class StoreStatusFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = StoreHouseStatus::class;
+    protected $model = StoreStatus::class;
 
     /**
      * Define the model's default state.

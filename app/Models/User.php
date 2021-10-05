@@ -9,6 +9,10 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
 use App\Models\Role;
+use App\Models\OrderStatus;
+use App\Models\Budget;
+use App\Models\FstStatus;
+use App\Models\StoreStatus;
 
 class User extends Authenticatable
 {
@@ -48,4 +52,20 @@ class User extends Authenticatable
     public function Role(){
         return $this->belongsTo(Role::class);
     }
+
+    public function OrderStatus(){
+        return $this->belongsToMany(OrderStatus::class);
+    }
+
+    public function Budget(){
+        return $this->belongsToMany(Budget::class);
+    }
+
+    public function FstStatus(){
+        return $this->belongsToMany(FstStatus::class);
+    }
+
+    public function StoreStatus(){
+        return $this->belongsToMany(StoreStatus::class);
+    }    
 }

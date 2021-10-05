@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\PurchaseOrder;
 use App\Models\User;
 
-class StoreHouseStatus extends Model
+class StoreStatus extends Model
 {
     use HasFactory;
 

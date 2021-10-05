@@ -2,11 +2,11 @@
 
 namespace App\Policies;
 
-use App\Models\StoreHouseStatus;
+use App\Models\StoreStatus;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class StoreHouseStatusPolicy
+class StoreStatusPolicy
 {
     use HandlesAuthorization;
 
@@ -25,10 +25,10 @@ class StoreHouseStatusPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\StoreHouseStatus  $StoreHouseStatus
+     * @param  \App\Models\StoreStatus  $storeStatus
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, StoreHouseStatus $StoreHouseStatus)
+    public function view(User $user, StoreStatus $storeStatus)
     {
         //
     }
@@ -48,10 +48,10 @@ class StoreHouseStatusPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\StoreHouseStatus  $StoreHouseStatus
+     * @param  \App\Models\StoreStatus  $storeStatus
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, StoreHouseStatus $StoreHouseStatus)
+    public function update(User $user, StoreStatus $storeStatus)
     {
         //
     }
@@ -60,10 +60,10 @@ class StoreHouseStatusPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\StoreHouseStatus  $StoreHouseStatus
+     * @param  \App\Models\StoreStatus  $storeStatus
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, StoreHouseStatus $StoreHouseStatus)
+    public function delete(User $user, StoreStatus $storeStatus)
     {
         //
     }
@@ -72,10 +72,10 @@ class StoreHouseStatusPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\StoreHouseStatus  $StoreHouseStatus
+     * @param  \App\Models\StoreStatus  $storeStatus
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, StoreHouseStatus $StoreHouseStatus)
+    public function restore(User $user, StoreStatus $storeStatus)
     {
         //
     }
@@ -84,10 +84,10 @@ class StoreHouseStatusPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\StoreHouseStatus  $StoreHouseStatus
+     * @param  \App\Models\StoreStatus  $storeStatus
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, StoreHouseStatus $StoreHouseStatus)
+    public function forceDelete(User $user, StoreStatus $storeStatus)
     {
         //
     }

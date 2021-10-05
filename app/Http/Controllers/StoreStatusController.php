@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\StoreHouseStatus;
+use App\Models\StoreStatus;
 use Illuminate\Http\Request;
 
-class StoreHouseStatusController extends Controller
+class StoreStatusController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class StoreHouseStatusController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\StoreHouseStatus  $StoreHouseStatus
+     * @param  \App\Models\StoreStatus  $storeStatus
      * @return \Illuminate\Http\Response
      */
-    public function show(StoreHouseStatus $StoreHouseStatus)
+    public function show(StoreStatus $storeStatus)
     {
         //
     }
@@ -52,10 +52,10 @@ class StoreHouseStatusController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\StoreHouseStatus  $StoreHouseStatus
+     * @param  \App\Models\StoreStatus  $storeStatus
      * @return \Illuminate\Http\Response
      */
-    public function edit(StoreHouseStatus $StoreHouseStatus)
+    public function edit(StoreStatus $storeStatus)
     {
         //
     }
@@ -64,10 +64,10 @@ class StoreHouseStatusController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\StoreHouseStatus  $StoreHouseStatus
+     * @param  \App\Models\StoreStatus  $storeStatus
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, StoreHouseStatus $StoreHouseStatus)
+    public function update(Request $request, StoreStatus $storeStatus)
     {
         //
     }
@@ -75,10 +75,10 @@ class StoreHouseStatusController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\StoreHouseStatus  $StoreHouseStatus
+     * @param  \App\Models\StoreStatus  $storeStatus
      * @return \Illuminate\Http\Response
      */
-    public function destroy(StoreHouseStatus $StoreHouseStatus)
+    public function destroy(StoreStatus $storeStatus)
     {
         //
     }
